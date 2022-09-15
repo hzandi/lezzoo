@@ -22,6 +22,9 @@ public class Supplier extends BaseEntity {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "image")
+    private String image;
+
     @NotNull
     @Column(name = "address")
     private String address;

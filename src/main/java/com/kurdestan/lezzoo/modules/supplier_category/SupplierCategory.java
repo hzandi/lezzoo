@@ -3,7 +3,6 @@ package com.kurdestan.lezzoo.modules.supplier_category;
 import com.kurdestan.lezzoo.common.BaseEntity;
 import com.kurdestan.lezzoo.modules.item.Item;
 import com.kurdestan.lezzoo.modules.supplier.Supplier;
-import com.kurdestan.lezzoo.modules.user.AppUser;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,6 +17,9 @@ public class SupplierCategory extends BaseEntity {
 
     @Column(name = "title")
     private String title;
+
+    @Column(name = "image")
+    private String image;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "supplierCategory", cascade = CascadeType.ALL)
     private List<Item> items;
