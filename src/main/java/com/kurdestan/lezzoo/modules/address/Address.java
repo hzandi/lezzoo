@@ -1,7 +1,9 @@
 package com.kurdestan.lezzoo.modules.address;
 
 import com.kurdestan.lezzoo.common.BaseEntity;
+import com.kurdestan.lezzoo.modules.invoce.Invoice;
 import com.kurdestan.lezzoo.modules.order.Order;
+import com.kurdestan.lezzoo.modules.supplier.Supplier;
 import com.kurdestan.lezzoo.modules.user.AppUser;
 import lombok.Data;
 import org.geolatte.geom.G2D;
@@ -29,6 +31,9 @@ public class Address extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private AppUser appUser;
+
+    @OneToOne(mappedBy = "address")
+    private Supplier supplier;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "address", cascade = CascadeType.ALL)
     private List<Order> orders;

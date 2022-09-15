@@ -2,11 +2,11 @@ package com.kurdestan.lezzoo.modules.supplier;
 
 
 import com.kurdestan.lezzoo.common.BaseEntity;
+import com.kurdestan.lezzoo.modules.address.Address;
 import com.kurdestan.lezzoo.modules.category.Category;
+import com.kurdestan.lezzoo.modules.order.Order;
 import com.kurdestan.lezzoo.modules.supplier_category.SupplierCategory;
 import lombok.Data;
-import org.geolatte.geom.G2D;
-import org.geolatte.geom.Point;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -26,11 +26,9 @@ public class Supplier extends BaseEntity {
     private String image;
 
     @NotNull
-    @Column(name = "address")
-    private String address;
-
-    @Column(name = "location")
-    private Point<G2D> location;
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     @NotNull
     @ManyToOne
