@@ -7,11 +7,15 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Table(name = "tbl_invoices")
 @Data
 @Entity
 public class Invoice extends BaseEntity {
+
+    @Column(name = "total_price")
+    private BigDecimal totalPrice;
 
     @NotNull
     @OneToOne
