@@ -22,6 +22,9 @@ public class AppUser extends BaseEntity {
     @Column(name = "username")
     private String username;
 
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "phone")
     private String phone;
 
@@ -29,5 +32,5 @@ public class AppUser extends BaseEntity {
     private List<Order> orders;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "appUser", cascade = CascadeType.ALL)
-    private List<Address> addressList;
+    private List<Address> addresses;
 }
