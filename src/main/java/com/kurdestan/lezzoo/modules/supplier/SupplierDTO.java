@@ -2,7 +2,7 @@ package com.kurdestan.lezzoo.modules.supplier;
 
 import com.kurdestan.lezzoo.modules.address.Address;
 import com.kurdestan.lezzoo.modules.category.Category;
-import com.kurdestan.lezzoo.modules.category_supplier.CategorySupplier;
+import com.kurdestan.lezzoo.modules.supplier_category.SupplierCategory;
 import com.kurdestan.lezzoo.modules.order.Order;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -26,7 +26,7 @@ public class SupplierDTO {
     private Category category;
 
     @ApiModelProperty(required = false, hidden = true)
-    private List<CategorySupplier> supplierCategories;
+    private List<SupplierCategory> supplierCategories;
 
     @ApiModelProperty(required = false, hidden = true)
     private List<Order> orders;

@@ -1,6 +1,6 @@
 package com.kurdestan.lezzoo.modules.item;
 
-import com.kurdestan.lezzoo.modules.category_supplier.CategorySupplier;
+import com.kurdestan.lezzoo.modules.supplier_category.SupplierCategory;
 import com.kurdestan.lezzoo.modules.order_item.OrderItem;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -20,7 +20,7 @@ public class ItemDTO {
     private String image;
 
     @ApiModelProperty(required = true, hidden = false)
-    private CategorySupplier categorySupplier;
+    private SupplierCategory supplierCategory;
 
     @ApiModelProperty(required = false, hidden = true)
     private List<OrderItem> orderItems;

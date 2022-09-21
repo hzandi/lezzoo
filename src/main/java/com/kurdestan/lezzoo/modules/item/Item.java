@@ -2,7 +2,7 @@ package com.kurdestan.lezzoo.modules.item;
 
 import com.kurdestan.lezzoo.common.BaseEntity;
 import com.kurdestan.lezzoo.modules.order_item.OrderItem;
-import com.kurdestan.lezzoo.modules.category_supplier.CategorySupplier;
+import com.kurdestan.lezzoo.modules.supplier_category.SupplierCategory;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -26,7 +26,7 @@ public class Item extends BaseEntity {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "supplier_category_id")
-    private CategorySupplier categorySupplier;
+    private SupplierCategory supplierCategory;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "item", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;

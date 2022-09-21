@@ -3,9 +3,6 @@ package com.kurdestan.lezzoo.modules.item;
 import com.kurdestan.lezzoo.common.SearchCriteria;
 import com.kurdestan.lezzoo.common.SearchSpecification;
 import com.kurdestan.lezzoo.common.exception.NotFoundException;
-import com.kurdestan.lezzoo.modules.category.Category;
-import com.kurdestan.lezzoo.modules.category.CategoryRepository;
-import com.kurdestan.lezzoo.modules.category.CategoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -42,7 +39,7 @@ public class ItemServiceImpl implements ItemService {
         lastSavedItem.setName(item.getName());
         lastSavedItem.setPrice(item.getPrice());
         lastSavedItem.setImage(item.getImage());
-        lastSavedItem.setCategorySupplier(item.getCategorySupplier());
+        lastSavedItem.setSupplierCategory(item.getSupplierCategory());
         return itemRepository.save(lastSavedItem);
     }
 
