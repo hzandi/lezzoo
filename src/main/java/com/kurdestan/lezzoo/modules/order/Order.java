@@ -4,6 +4,7 @@ import com.kurdestan.lezzoo.common.BaseEntity;
 import com.kurdestan.lezzoo.modules.address.Address;
 import com.kurdestan.lezzoo.modules.invoce.Invoice;
 import com.kurdestan.lezzoo.modules.order_item.OrderItem;
+import com.kurdestan.lezzoo.modules.supplier.Supplier;
 import com.kurdestan.lezzoo.modules.user.AppUser;
 import lombok.Data;
 
@@ -23,6 +24,11 @@ public class Order extends BaseEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "supplier_id")
+    private Supplier supplier;
 
     @NotNull
     @ManyToOne
