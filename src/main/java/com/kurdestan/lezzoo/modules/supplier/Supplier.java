@@ -5,7 +5,7 @@ import com.kurdestan.lezzoo.common.BaseEntity;
 import com.kurdestan.lezzoo.modules.address.Address;
 import com.kurdestan.lezzoo.modules.category.Category;
 import com.kurdestan.lezzoo.modules.order.Order;
-import com.kurdestan.lezzoo.modules.supplier_category.SupplierCategory;
+import com.kurdestan.lezzoo.modules.category_supplier.CategorySupplier;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -36,6 +36,9 @@ public class Supplier extends BaseEntity {
     private Category category;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "supplier", cascade = CascadeType.ALL)
-    private List<SupplierCategory> supplierCategories;
+    private List<CategorySupplier> supplierCategories;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "supplier", cascade = CascadeType.ALL)
+    private List<Order> orders;
 
 }
